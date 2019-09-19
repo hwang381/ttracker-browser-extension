@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "ttracker-ff-ext",
+    "version": "0.1",
+    "description": "Firefox extension for sending browser events to ttracker",
+    "permissions": [
+        "tabs"
+    ],
+    "background": {
+        "scripts": ["tab-focus.js"]
+    }
+}
