@@ -7,7 +7,7 @@ function newUrl(url) {
     if (url === lastUrl) {
         return
     }
-    fetch('http://127.0.0.1:16789/event/browser_tab_focus', {
+    fetch('http://127.0.0.1:16789/api/event/browser_tab_focus', {
         method: 'post',
         body: url
     }).catch(function (error) {
