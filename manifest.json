@@ -8,5 +8,10 @@
     ],
     "background": {
         "scripts": ["tab-focus.js"]
+    },
+    "applications": {
+        "gecko": {
+            "id": "ttracker-ff-ext@hwang381.dev"
+        }
     }
 }
