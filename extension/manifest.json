@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "ttracker-browser_extension",
+    "name": "ttracker browser extension",
     "version": "0.0.1",
     "description": "Browser extension for sending browser events to ttracker",
     "permissions": [
@@ -11,7 +11,7 @@
     },
     "applications": {
         "gecko": {
-            "id": "ttracker-ff-ext@hwang381.dev"
+            "id": "ttracker-browser-extension@hwang381.dev"
         }
     }
 }
