@@ -1,6 +1,13 @@
 let lastUrl;
 
 setInterval(async () => {
+    const windows = await browser.windows.getAll();
+    if (windows.filter(w => w.focused).length === 0) {
+        console.log("no window is focused, ignore");
+        lastUrl = undefined;
+        return
+    }
+
     const activeTabs = await browser.tabs.query({
         currentWindow: true,
         active: true
