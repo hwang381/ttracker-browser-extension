@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "ttracker-ff-ext",
-    "version": "0.1",
-    "description": "Firefox extension for sending browser events to ttracker",
+    "name": "ttracker-browser_extension",
+    "version": "0.0.1",
+    "description": "Browser extension for sending browser events to ttracker",
     "permissions": [
         "tabs"
     ],
