@@ -2,7 +2,7 @@
 
 set -e
 
-rm -f ./ttracker-firefox.xpi
+rm -f ./ttracker-firefox-unsigned.xpi
 pushd ./extension
-zip -r -FS ../ttracker-firefox.xpi *
+zip -r -FS ../ttracker-firefox-unsigned.xpi *
 popd

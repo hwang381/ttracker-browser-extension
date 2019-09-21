@@ -16,13 +16,12 @@ Too hard `¯\_(ツ)_/¯`
 
 Mozilla requires add-on's to be signed before they can be permanently installed on a stable version of Firefox.
 
-Download the latest signed add-on's from [releases page](https://github.com/hwang381/ttracker-browser-extension/releases) instead
+Instead, download the latest signed add-on's (`.xpi` file) from [releases page](https://github.com/hwang381/ttracker-browser-extension/releases)
 
 ## Distribute from source
 
 ### Firefox
-I need to export two environment variables `AMO_API_KEY` and `AMO_API_SECRET` as per suggested [here](https://github.com/mozilla/sign-addon#getting-started)
 ```bash
 ./package-firefox.sh
-./sign-firefox.js
+# Then go to https://addons.mozilla.org/en-us/developers/addons and upload ttracker-firefox-unsigned.xpi
 ```
