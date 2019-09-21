@@ -7,7 +7,7 @@
         "tabs"
     ],
     "background": {
-        "scripts": ["tab-focus.js"]
+        "scripts": ["monitor.js"]
     },
     "applications": {
         "gecko": {
