@@ -1,38 +1,36 @@
-let lastUrl;
-
 setInterval(async () => {
-    const windows = await browser.windows.getAll();
-    if (windows.filter(w => w.focused).length === 0) {
+    const windows = await browser.windows.getAll({
+        populate: true
+    });
+    const focusedWindows = windows.filter(w => w.focused);
+    if (focusedWindows.length === 0) {
         console.log("no window is focused, ignore");
-        lastUrl = undefined;
         return
     }
-
-    const activeTabs = await browser.tabs.query({
-        currentWindow: true,
-        active: true
-    });
-    if (activeTabs.length !== 1) {
-        console.error("there is not one active tab??");
+    if (focusedWindows.length > 1) {
+        console.log("more than one window is focused (why?), ignore");
+        return
+    }
+    const focusedWindow = focusedWindows[0];
+    const activeTabs = focusedWindow.tabs.filter(t => t.active);
+    if (activeTabs.length === 0) {
+        console.log("no tab is active, ignore");
+        return
+    }
+    if (activeTabs.length > 1) {
+        console.log("more than one tab is active (why?), ignore");
         return
     }
     const activeTab = activeTabs[0];
-
     const url = activeTab.url;
-    console.log(url);
-    if (url.startsWith("about")) {
-        return
-    }
-    if (url === lastUrl) {
-        return
-    }
     try {
-        await fetch('http://127.0.0.1:16789/api/event/browser_tab_focus', {
+        await fetch('http://localhost:16789/api/ping/browser', {
             method: 'post',
             body: url
+        }).then(() => {
+            console.log(`pinged ${url}`)
         })
     } catch (error) {
         console.error(error)
     }
-    lastUrl = url
 }, 1000);
