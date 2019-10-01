@@ -37,7 +37,10 @@ setInterval(async () => {
                 method: 'post',
                 body: JSON.stringify({
                     hostname: hostname,
-                })
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             }).then(() => {
                 console.log(`pinged ${hostname}`)
             })
